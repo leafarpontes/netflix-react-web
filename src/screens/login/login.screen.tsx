@@ -1,8 +1,9 @@
 import { Grid } from "@mui/material";
-import { useCallback, useEffect, useState } from "react"
-import { Error, Input, Wrapper } from "./login.styled"
+import { useCallback, useEffect, useState } from "react";
+import { Error, Wrapper } from "./login.styled";
 import * as yup from 'yup';
 import Button from "../../components/button/button";
+import Input from "../../components/input/input";
 
 export default function Form() {
   const [data, setData] = useState({
