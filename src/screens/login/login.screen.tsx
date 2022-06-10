@@ -1,7 +1,9 @@
 import { Grid } from "@mui/material";
-import { useCallback, useEffect, useState } from "react"
-import { Button, Error, Input, Wrapper } from "./login.styled"
+import { useCallback, useEffect, useState } from "react";
+import { Error, Wrapper } from "./login.styled";
 import * as yup from 'yup';
+import Button from "../../components/button/button";
+import Input from "../../components/input/input";
 
 export default function Form() {
   const [data, setData] = useState({
@@ -47,7 +49,7 @@ export default function Form() {
 
   return (
     <Wrapper container justifyContent='center' alignContent='center'>
-      <Grid container item={true} justifyContent='center' alignContent='center' xs={2}>
+      <Grid item xs={2}>
         <Input 
           type="email" 
           name="email" 
@@ -60,8 +62,10 @@ export default function Form() {
           onChange={handleChange}
           placeholder="Senha"
         />
+        {error && (
+          <Error>{error}</Error>
+        )}
         <Button onClick={handleSend}>Entrar</Button>
-        <Error>{error}</Error>
       </Grid>
     </Wrapper>
   )
